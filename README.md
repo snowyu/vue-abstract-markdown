@@ -1,5 +1,6 @@
 # Abstract Markdown viewer Mixin
 
+```ts
 /**
  * AbstractMarkdown Viewer Mixin
  * @abstract
@@ -15,3 +16,23 @@
  * @property quotes: Double + single quotes replacement pairs, when typographer enabled, defaults to '“”‘’'
  *
  */
+  /**
+   * Convert prepared markdown text to html.
+   * @param text the prepared(prerender) markdown text.
+   * @param options the markdown options.
+   */
+  toHtml(text: string, options?: IMarkdownOptions){
+    return text;
+  }
+
+  /**
+   * convert emotion char in the markdown text.
+   * @abstract
+   * @param text the markdown text to process
+   */
+  parseEmoji(text: string) {
+    return text;
+  }
+
+
+```
