@@ -20,7 +20,7 @@
   "author": "Riceball LEE <snowyu.lee@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/snowyu/vue-abstract-markdown"
+    "url": "git@github.com:snowyu/vue-abstract-markdown.git"
   },
   "license": "MIT",
   "engines": {
