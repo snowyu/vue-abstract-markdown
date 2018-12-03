@@ -1,0 +1,109 @@
+{
+  "name": "vue-abstract-markdown",
+  "version": "0.0.0",
+  "description": "The abstract markdown viewer mixins component for vue",
+  "keywords": [
+    "abstract",
+    "markdown",
+    "view",
+    "viewer",
+    "component",
+    "vue",
+    "mixin"
+  ],
+  "main": "dist/abstract-markdown.umd.js",
+  "module": "dist/abstract-markdown.es5.js",
+  "typings": "dist/types/abstract-markdown.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Riceball LEE <snowyu.lee@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs -p tsconfig.build.json && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.11",
+    "@vue/test-utils": "^1.0.0-beta.26",
+    "colors": "^1.3.2",
+    "commitizen": "^3.0.5",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.2.0",
+    "jest": "^23.6.0",
+    "jest-config": "^23.6.0",
+    "jest-extended": "^0.11.0",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^8.1.0",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.15.3",
+    "prompt": "^1.0.0",
+    "replace-in-file": "^3.4.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.18.0",
+    "semantic-release": "^15.12.3",
+    "travis-deploy-once": "^5.0.9",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslib": "^1.9.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.2.1",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.3.2",
+    "vue-jest": "^3.0.1",
+    "vue-property-decorator": "^7.2.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}

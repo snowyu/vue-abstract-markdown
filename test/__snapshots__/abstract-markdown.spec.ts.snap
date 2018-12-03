@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AbstractMarkdown should create abstract markdown component 1`] = `
+<div>
+  hello **world**
+</div>
+`;
+
+exports[`AbstractMarkdown should mixin the abstract markdown component with invisible 1`] = `<div />`;
+
+exports[`AbstractMarkdown should mixin the abstract markdown component with slot 1`] = `
+<div>
+  hello
+  <img
+    smile=""
+  />
+   --world--
+</div>
+`;
+
+exports[`AbstractMarkdown should mixin the abstract markdown component with source prop 1`] = `
+<div>
+  hello pro --world--
+</div>
+`;
+
+exports[`AbstractMarkdown should mixin the abstract markdown component with source prop 2`] = `
+<div>
+  ok it --as--
+</div>
+`;
