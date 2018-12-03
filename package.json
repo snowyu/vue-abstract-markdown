@@ -1,6 +1,6 @@
 {
   "name": "vue-abstract-markdown",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "The abstract markdown viewer mixins component for vue",
   "keywords": [
     "abstract",
@@ -39,7 +39,9 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
